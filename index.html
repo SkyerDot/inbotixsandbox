@@ -29,7 +29,9 @@
         }
 
         body {
-            background: linear-gradient(135deg, var(--black) 0%, #1a1a1a 50%, var(--black) 100%);
+            background: linear-gradient(135deg, var(--black) 0%, #1a1a1a 25%, #0f0f0f 50%, #1a1a1a 75%, var(--black) 100%);
+            background-size: 400% 400%;
+            animation: liquidFlow 10s ease-in-out infinite;
             color: var(--white);
             display: flex;
             min-height: 100vh;
@@ -46,8 +48,10 @@
             position: fixed;
             height: 100vh;
             z-index: 100;
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            border-radius: 0 20px 20px 0;
         }
 
         .logo {
@@ -217,10 +221,11 @@
             border-bottom: 1px solid var(--blue);
             margin-bottom: 25px;
             background: rgba(4, 16, 86, 0.1);
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             padding: 20px;
             border-radius: 8px;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 4px 16px rgba(0, 0, 0, 0.2);
         }
 
         .header h2 {
@@ -283,7 +288,8 @@
             border: 1px solid var(--blue);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 8px 32px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
         }
 
         .metric-header {
@@ -324,8 +330,11 @@
             gap: 4px;
         }
 
-        .metric-change.negative {
-            color: var(--danger);
+        .metric-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
         }
 
         /* Tabs */
@@ -335,8 +344,9 @@
             overflow: hidden;
             border: 1px solid var(--blue);
             margin-bottom: 30px;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 8px 32px rgba(0, 0, 0, 0.3);
         }
 
         .tab-header {
@@ -399,8 +409,9 @@
             border-radius: 8px;
             border: 1px solid var(--blue);
             background: rgba(4, 16, 86, 0.2);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 8px 32px rgba(0, 0, 0, 0.3);
         }
 
         table {
@@ -545,8 +556,9 @@
             border-radius: 12px;
             padding: 30px;
             margin-top: 20px;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 8px 32px rgba(0, 0, 0, 0.3);
         }
 
         .import-preview {
@@ -658,8 +670,9 @@
             padding: 20px;
             border-radius: 12px;
             border: 1px solid var(--blue);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 8px 32px rgba(0, 0, 0, 0.3);
         }
 
         .chart-title {
@@ -681,8 +694,9 @@
             padding: 25px;
             border-radius: 12px;
             border: 1px solid var(--blue);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 8px 32px rgba(0, 0, 0, 0.3);
         }
 
         .api-key {
@@ -749,6 +763,12 @@
 
         ::-webkit-scrollbar-thumb:hover {
             background: var(--light-blue);
+        }
+
+        @keyframes liquidFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
     </style>
 </head>
